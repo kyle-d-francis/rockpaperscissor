@@ -1,11 +1,11 @@
 from human import Human
 from ai import Ai
-from player import Player
+
 
 
 class RLPSLS_Game:
     def __init__(self):
-        self.player_one = Human
+        self.player_one = Human()
         self.player_two = ''
 
     def run_game(self):
@@ -16,11 +16,11 @@ class RLPSLS_Game:
     def welcome_message(self):
         print('Welcome to Rock, Paper, Scissors, Lizard, Spock!')
         user_input = input('How many players? 1 or 2: ')
-        if user_input == 1:
-            self.player_two = Ai
-        else:
-            user_input == 2
-            self.player_two= Human
+        if user_input == '2':
+            self.player_two = Human()
+        elif user_input == '1':
+            self.player_two= Ai()
+            return user_input
 
 
          
@@ -29,10 +29,19 @@ class RLPSLS_Game:
         player_one = self.player_one
         player_two = self.player_two
         while player_one.score < 2 and player_two.score < 2:
-            player_one.chosen_gesture
-            player_two.chosen_gesture
-            self.compare_gesture 
-            if player_one.chosen_gesture == 'rock' and player_two.chosen_gesture == "scissors" or "lizard":
+            player_one.chose_gesture()
+            player_two.chose_gesture()
+            if player_one.chosen_gesture == 'rock'and player_two.chosen_gesture == 'rock':
+                print('its a tie')
+            elif player_one.chosen_gesture == 'spock' and player_two.chosen_gesture =='spock':
+                print('its a tie')
+            elif player_one.chosen_gesture == 'lizard' and player_two.chosen_gesture =='lizard':
+                print('its a tie')
+            elif player_one.chosen_gesture == 'scissors' and player_two.chosen_gesture =='scissors':
+                print('its a tie')
+            elif player_one.chosen_gesture == 'paper' and player_two.chosen_gesture =='paper':
+                print('its a tie')    
+            elif player_one.chosen_gesture == 'rock' and player_two.chosen_gesture == "scissors" or "lizard":
                 player_one.score+= 1
             elif player_two.chosen_gesture == 'rock' and player_one.chosen_gesture == 'scissors'or 'lizard':
                 player_two.score+=1
@@ -50,13 +59,17 @@ class RLPSLS_Game:
                 player_two.score+=1
             elif player_one.chosen_gesture == 'lizard' and player_two.chosen_gesture == 'spock' or 'paper':
                 player_one.score+=1
-            elif player_two.chosen.gesture = 'lizard' and player_one.chosen_gesture == 'spock' or 'paper':
+            elif player_two.chosen_gesture == 'lizard' and player_one.chosen_gesture == 'spock' or 'paper':
                 player_two.score+=1
+            print(player_one.score) 
+            print(player_two.score)
             if player_one.score == 2 or player_two.score == 2:
                 break 
                 
 
     def display_winner(self):
+        player_one = self.player_one
+        player_two = self.player_two
         if player_one.score == 2:
             print('Player one is the winner!')
         else:

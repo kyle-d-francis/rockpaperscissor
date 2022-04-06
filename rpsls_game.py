@@ -16,9 +16,18 @@ class RLPSLS_Game:
     def welcome_message(self):
         print('Welcome to Rock, Paper, Scissors, Lizard, Spock!')
         user_input = input('How many players? 1 or 2: ')
+        if user_input == 1:
+            self.player_two = Ai
+        else:
+            user_input == 2
+            self.player_two= Human
+
+
          
 
     def battle_phase(self):
+        player_one = self.player_one
+        player_two = self.player_two
         while player_one.score < 2 and player_two.score < 2:
             player_one.chosen_gesture
             player_two.chosen_gesture

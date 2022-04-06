@@ -22,7 +22,27 @@ class RLPSLS_Game:
         while player_one.score < 2 and player_two.score < 2:
             player_one.chosen_gesture
             player_two.chosen_gesture
-            self.compare_gesture
+            self.compare_gesture 
+            if player_one.chosen_gesture == 'rock' and player_two.chosen_gesture == "scissors" or "lizard":
+                player_one.score+= 1
+            elif player_two.chosen_gesture == 'rock' and player_one.chosen_gesture == 'scissors'or 'lizard':
+                player_two.score+=1
+            elif player_one.chosen_gesture == 'spock' and player_two.chosen_gesture == 'rock' or 'scissors':
+                player_one.score+=1
+            elif player_two.chosen_gesture == 'spock' and player_one.chosen_gesture == 'rock' or 'scissor':
+                player_two.score+=1
+            elif player_one.chosen_gesture == 'scissors' and player_two.chosen_gesture == 'paper' or 'lizard':
+                player_one.score +=1
+            elif player_two.chosen_gesture == 'scissor' and player_one.chosen_gesture == 'paper' or 'lizard':
+                player_two.score += 1
+            elif player_one.chosen_gesture == 'paper' and player_two.chosen_gesture == 'rock'or 'spock':
+                player_one.score +=1
+            elif player_two.chosen_gesture == 'paper' and player_two.chosen_gesture == 'rock' or 'spock':
+                player_two.score+=1
+            elif player_one.chosen_gesture == 'lizard' and player_two.chosen_gesture == 'spock' or 'paper':
+                player_one.score+=1
+            elif player_two.chosen.gesture = 'lizard' and player_one.chosen_gesture == 'spock' or 'paper':
+                player_two.score+=1
             if player_one.score == 2 or player_two.score == 2:
                 break 
                 

@@ -9,5 +9,7 @@ class Player:
         user_input = input('What move will you like to play?')
         self.chose_gesture = user_input
 
-    def compare_gesture(self):
+    def compare_gesture(self,):
+        
+        defeat = 
         pass 

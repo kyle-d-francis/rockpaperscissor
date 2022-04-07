@@ -31,38 +31,7 @@ class RLPSLS_Game:
         while player_one.score < 2 and player_two.score < 2:
             player_one.chose_gesture()
             player_two.chose_gesture()
-            if player_one.chosen_gesture == 'rock'and player_two.chosen_gesture == 'rock':
-                print('its a tie')
-            elif player_one.chosen_gesture == 'spock' and player_two.chosen_gesture =='spock':
-                print('its a tie')
-            elif player_one.chosen_gesture == 'lizard' and player_two.chosen_gesture =='lizard':
-                print('its a tie')
-            elif player_one.chosen_gesture == 'scissors' and player_two.chosen_gesture =='scissors':
-                print('its a tie')
-            elif player_one.chosen_gesture == 'paper' and player_two.chosen_gesture =='paper':
-                print('its a tie')    
-            elif player_one.chosen_gesture == 'rock' and player_two.chosen_gesture == "scissors" or "lizard":
-                player_one.score+= 1
-            elif player_two.chosen_gesture == 'rock' and player_one.chosen_gesture == 'scissors'or 'lizard':
-                player_two.score+=1
-            elif player_one.chosen_gesture == 'spock' and player_two.chosen_gesture == 'rock' or 'scissors':
-                player_one.score+=1
-            elif player_two.chosen_gesture == 'spock' and player_one.chosen_gesture == 'rock' or 'scissor':
-                player_two.score+=1
-            elif player_one.chosen_gesture == 'scissors' and player_two.chosen_gesture == 'paper' or 'lizard':
-                player_one.score +=1
-            elif player_two.chosen_gesture == 'scissor' and player_one.chosen_gesture == 'paper' or 'lizard':
-                player_two.score += 1
-            elif player_one.chosen_gesture == 'paper' and player_two.chosen_gesture == 'rock'or 'spock':
-                player_one.score +=1
-            elif player_two.chosen_gesture == 'paper' and player_two.chosen_gesture == 'rock' or 'spock':
-                player_two.score+=1
-            elif player_one.chosen_gesture == 'lizard' and player_two.chosen_gesture == 'spock' or 'paper':
-                player_one.score+=1
-            elif player_two.chosen_gesture == 'lizard' and player_one.chosen_gesture == 'spock' or 'paper':
-                player_two.score+=1
-            print(player_one.score) 
-            print(player_two.score)
+            player_one.compare_gesture(player_one, player_two)
             if player_one.score == 2 or player_two.score == 2:
                 break 
                 

@@ -1,9 +1,5 @@
-from unicodedata import name
-
-
 class Player:
     def __init__(self):
-        self.name = ''
         self.score = 0  
         self.list_of_possible_gestures = ['rock', 'paper', 'scissors', 'lizard', 'spock']
         self.chosen_gesture = ''
@@ -14,16 +10,18 @@ class Player:
         return user_input
 
     def compare_gesture(self, player_one, player_two):
-            if player_one.chosen_gesture == 'rock'and player_two.chosen_gesture == 'rock':
-                print('its a tie')
+            if player_one.chosen_gesture != self.list_of_possible_gestures or player_two.chosen_gesture != self.list_of_possible_gestures:
+                print('Try Again')
+            elif player_one.chosen_gesture == 'rock'and player_two.chosen_gesture == 'rock':
+                print('Its a tie!')
             elif player_one.chosen_gesture == 'spock' and player_two.chosen_gesture =='spock':
-                print('its a tie')
+                print('Its a tie!')
             elif player_one.chosen_gesture == 'lizard' and player_two.chosen_gesture =='lizard':
-                print('its a tie')
+                print('Its a tie!')
             elif player_one.chosen_gesture == 'scissors' and player_two.chosen_gesture =='scissors':
-                print('its a tie')
+                print('Its a tie!')
             elif player_one.chosen_gesture == 'paper' and player_two.chosen_gesture =='paper':
-                print('its a tie')    
+                print('Its a tie!')    
             elif player_one.chosen_gesture == 'rock' and (player_two.chosen_gesture == 'scissors' or player_two.chosen_gesture == 'lizard'):
                 player_one.score += 1
             elif player_two.chosen_gesture == 'rock' and (player_one.chosen_gesture == 'scissors' or player_one.chosen_gesture == 'lizard'):

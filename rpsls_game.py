@@ -23,8 +23,6 @@ class RLPSLS_Game:
             return user_input
 
 
-         
-
     def battle_phase(self):
         player_one = self.player_one
         player_two = self.player_two
